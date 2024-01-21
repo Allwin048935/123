@@ -4,7 +4,6 @@ from ta.trend import ema_indicator
 import asyncio
 import nest_asyncio
 from telegram import Bot
-from plyer import notification
 
 # Binance API credentials
 api_key = 'BVhb32XgQmX17IGs3vVH2Hw1fiH9W84pg8K5JtLuQnRKHPy7YlyPTG0qChkxTnrL'
@@ -33,7 +32,7 @@ def get_historical_data(symbol, interval, limit=100):
     return df
 
 # Function to check EMA cross
-def check_ema_cross(df, short_period=12, long_period=26):
+def check_ema_cross(df, short_period=10, long_period=20):
     df['ema_short'] = ema_indicator(df['close'], window=short_period)
     df['ema_long'] = ema_indicator(df['close'], window=long_period)
 
@@ -47,10 +46,6 @@ async def send_telegram_message(symbol, message):
     # Check if the current message is the same as the previous one for this symbol
     if last_alert_messages.get(symbol) != message:
         await telegram_bot.send_message(chat_id=chat_id, text=message)
-        notification.notify(
-            title='EMA Cross Alert',
-            message=message,
-        )
         # Update the last alert message for this symbol
         last_alert_messages[symbol] = message
 
@@ -90,4 +85,5 @@ nest_asyncio.apply()
 
 # Create and run the event loop
 asyncio.run(main())
+
 
