@@ -15,7 +15,6 @@ interval = '1d'  # 1-hour candlesticks
 telegram_token = '6811110812:AAFNJp5kcSh0KZ71Yizf8Y3rPBarz-ywopM'
 chat_id = '1385370555'
 
-
 # Initialize Binance client
 binance = ccxt.binance({
     'apiKey': api_key,
@@ -34,7 +33,7 @@ def get_historical_data(symbol, interval, limit=100):
     return df
 
 # Function to check EMA cross
-def check_ema_cross(df, short_period=10, long_period=20):
+def check_ema_cross(df, short_period=12, long_period=26):
     df['ema_short'] = ema_indicator(df['close'], window=short_period)
     df['ema_long'] = ema_indicator(df['close'], window=long_period)
 
