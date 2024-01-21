@@ -81,7 +81,7 @@ async def main():
                     print(f"Error processing {symbol}: {e}")
 
         # Sleep for a specified interval before checking again
-        await asyncio.sleep(1)  # Adjust the sleep duration as needed
+        await asyncio.sleep(300)  # Adjust the sleep duration as needed
 
 # Initialize Telegram Bot
 telegram_bot = Bot(token=telegram_token)
