@@ -5,6 +5,7 @@ import asyncio
 import nest_asyncio
 from telegram import Bot
 from plyer import notification
+from secrets import BINANCE_API_KEY, BINANCE_API_SECRET, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
 
 # Binance API credentials
 api_key = 'YOUR_BINANCE_API_KEY'
@@ -12,13 +13,13 @@ api_secret = 'YOUR_BINANCE_API_SECRET'
 interval = '1d'  # 1-day candlesticks
 
 # Telegram Bot Token and Chat ID
-telegram_token = 'YOUR_TELEGRAM_BOT_TOKEN'
-chat_id = 'YOUR_TELEGRAM_CHAT_ID'
+telegram_token = TELEGRAM_BOT_TOKEN
+chat_id = TELEGRAM_CHAT_ID
 
 # Initialize Binance client
 binance = ccxt.binance({
-    'apiKey': api_key,
-    'secret': api_secret,
+    'apiKey': BINANCE_API_KEY,
+    'secret': BINANCE_API_SECRET,
 })
 
 # Dictionary to store the last alert messages for each symbol
