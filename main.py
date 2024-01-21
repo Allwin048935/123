@@ -7,13 +7,13 @@ from telegram import Bot
 from plyer import notification
 
 # Binance API credentials
-api_key = 'BVhb32XgQmX17IGs3vVH2Hw1fiH9W84pg8K5JtLuQnRKHPy7YlyPTG0qChkxTnrL'
-api_secret = 'xVM8dF8qIhTRtfaTShbHON7oJffooUbP2wp3oPqYUbFLJ1ZCHLN9dEmN9niAYzVF'
-interval = '1d'  # 1-hour candlesticks
+api_key = 'YOUR_BINANCE_API_KEY'
+api_secret = 'YOUR_BINANCE_API_SECRET'
+interval = '1d'  # 1-day candlesticks
 
 # Telegram Bot Token and Chat ID
-telegram_token = '6811110812:AAFNJp5kcSh0KZ71Yizf8Y3rPBarz-ywopM'
-chat_id = '1385370555'
+telegram_token = 'YOUR_TELEGRAM_BOT_TOKEN'
+chat_id = 'YOUR_TELEGRAM_CHAT_ID'
 
 # Initialize Binance client
 binance = ccxt.binance({
