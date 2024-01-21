@@ -5,7 +5,6 @@ import asyncio
 import nest_asyncio
 from telegram import Bot
 from plyer import notification
-from secrets import BINANCE_API_KEY, BINANCE_API_SECRET, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
 
 # Binance API credentials
 api_key = 'BVhb32XgQmX17IGs3vVH2Hw1fiH9W84pg8K5JtLuQnRKHPy7YlyPTG0qChkxTnrL'
